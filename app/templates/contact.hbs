@@ -1,1 +1,27 @@
 <h1>Contact</h1>
+<div class="row">
+    <div class="col-md-6 col-xs-12 form-group">
+        <label>Your email address</label>
+        {{input type="email" value=model.email class="form-control" placeholder="Your e-mail address." autofocus="autofocus"}}        
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-xs-12 form-group">
+        <label>Your message</label>
+        {{textarea value=model.text class="form-control" placeholder="Your message" rows=8}}        
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-2">
+        <button disabled={{isDisabled}} {{action 'saveContact' model}} class="btn btn-success">Send</button>
+    </div>
+</div>
+
+{{#if messageSent}}
+<br /><br />
+<div class="row">
+    <div class="col-md-12">
+        <div class="alert alert-success">{{feedbackMessage}}</div>
+    </div>
+</div>
+{{/if}}
