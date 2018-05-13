@@ -13,7 +13,12 @@
 </div>
 <div class="row">
     <div class="col-xs-2">
-        <button disabled={{isDisabled}} {{action 'saveContact' model}} class="btn btn-success">Send</button>
+        <button disabled={{isDisabled}} {{action 'saveContact' model}} class="btn btn-success">
+            {{#if isLoading}}
+                <i class='fa fa-circle-o-notch fa-spin'></i>
+            {{/if}}
+            Send
+        </button>
     </div>
 </div>
 
